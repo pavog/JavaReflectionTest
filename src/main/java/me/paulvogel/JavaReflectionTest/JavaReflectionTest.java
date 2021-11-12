@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.*;
 
-public class Main
+public class JavaReflectionTest
 {
     public static void main(String[] args)
     {
