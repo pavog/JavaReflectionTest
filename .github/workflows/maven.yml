@@ -14,12 +14,17 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        java: [ 11, 12, 13 ]
+    name: Java ${{ matrix.java }} compile
+    
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 11
+    - name: Set up JDK
       uses: actions/setup-java@v2
       with:
-        java-version: '11'
+        java-version: ${{ matrix.java }}
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
